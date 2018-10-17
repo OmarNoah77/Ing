@@ -10,7 +10,7 @@
 @stop
 
 @section('page-header')
-    Users <small>{{ trans('app.manage') }}</small>
+    Usuario <small>Lista</small>
 @stop
 
 @section('content')
@@ -29,16 +29,18 @@
 	        <table id="tbl" class="table data-tables table-striped table-hover" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Nombre</th>
+                        <th>Empresa</th>
                         <th>Email</th>
-                        <th>Role</th>
-                        <th class='bool text-center'>Active</th>
+                        <th>Rol</th>
+                        <th class='bool text-center'>Activo</th>
                         <th class="no-sort"></th>
                     </tr>
                 </thead>
 
                 <tfoot>
                     <tr>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -52,6 +54,7 @@
 
           						<tr>
                           <td><a href="{{ route(ADMIN . '.users.edit', $item->id) }}">{{ $item->name }}</a></td>
+                          <td>{{ $item->id_empresa }}</td>
                           <td>{{ $item->email }}</td>
                           <td>{{ Helper::getRolename($item->role)  }}</td>
                           <td>{{ $item->active }}</td>

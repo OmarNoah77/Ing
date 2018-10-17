@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Http\Request;
 use App\Empresa;
-use Validator;
 
-class UsersController extends Controller
+class EmpresasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +15,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $items = User::all();
-        return view('admin.users.index', compact('items'));
+        $items = Empresa::with('parent')->get();
+
+        return view('admin.empresas.index', compact('items'));
     }
 
     /**
@@ -30,7 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.empresas.create');
     }
 
     /**
@@ -41,9 +38,10 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, User::rules());
-        User::create($request->all());
-        return redirect()->route(ADMIN.'.users.index')->withSuccess(trans('app.success_store'));
+        Empresa::create($request->all());
+
+        //return back()->withSuccess(trans('app.success_store'));
+        return redirect()->route(ADMIN.'.empresas.index')->withSuccess(trans('app.success_store'));
     }
 
     /**
@@ -65,8 +63,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $item = User::findOrFail($id);
-        return view('admin.users.edit', compact('item'));
+        $item = Empresa::findOrFail($id);
+
+        return view('admin.empresas.edit', compact('item'));
     }
 
     /**
@@ -78,10 +77,10 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, User::rules(true, $id));
-        $item = User::findOrFail($id);
+        $item = Empresa::findOrFail($id);
         $item->update($request->all());
-        return redirect()->route(ADMIN.'.users.index')->withSuccess(trans('app.success_update'));
+        //return back()->withSuccess(trans('app.success_update'));
+        return redirect()->route(ADMIN.'.empresas.index')->withSuccess(trans('app.success_update'));
     }
 
     /**
@@ -92,7 +91,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        Empresa::destroy($id);
+
         return back()->withSuccess(trans('app.success_destroy'));
     }
 }

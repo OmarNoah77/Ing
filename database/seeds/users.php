@@ -25,6 +25,7 @@ class users extends Seeder
             'role'     => 5,
             'active'     => 1,
             'avatar'   => 'avatar1.jpg',
+            'id_empresa'   => '0',
         ]);
 
         array_push($data, [
@@ -34,6 +35,7 @@ class users extends Seeder
             'role'     => 0,
             'active'     => 1,
             'avatar'   => 'avatar2.jpg',
+            'id_empresa'   => '0',
         ]);
 
         User::insert($data);

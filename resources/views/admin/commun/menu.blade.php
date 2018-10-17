@@ -22,7 +22,16 @@
     <li class="<?php echo ( starts_with($route, ADMIN.'.users') ) ? "active" : '' ?>">
         <a href="{{ route(ADMIN.'.users.index') }}">
             <i class="fa fa-users"></i>
-            <span>Users</span>
+            <span>Usuarios</span>
+        </a>
+    </li>
+    @endif
+
+    @if (auth()->user()->hasRole('Superadmin|Admin'))
+    <li class="<?php echo ( starts_with($route, ADMIN.'.empresas') ) ? "active" : '' ?>">
+        <a href="{{ route(ADMIN.'.empresas.index') }}">
+            <i class="fa fa-users"></i>
+            <span>Empresas</span>
         </a>
     </li>
     @endif

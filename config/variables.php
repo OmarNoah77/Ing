@@ -4,19 +4,19 @@ return [
 
     'boolean' => [
         '0' => 'No',
-        '1' => 'Yes',
+        '1' => 'Si',
     ],
 
     'role' => [
-        '0' => 'User',
+        '0' => 'Usuario',
         '1' => 'Manager',
         '4' => 'Admin',
         '5' => 'Superadmin',
     ],
 
     'status' => [
-        '1' => 'Active',
-        '0' => 'Inactive',
+        '1' => 'Activo',
+        '0' => 'Inactivo',
     ],
 
     'avatar' => [

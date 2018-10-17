@@ -1,7 +1,7 @@
 @extends('admin.adminlayout')
 
 @section('page-header')
-  Usuario <small>actualizar</small>
+  Empresas <small>actualizar</small>
 @stop
 
 @section('content')
@@ -9,22 +9,22 @@
   <div class="col-sm-12">
     <div class="box" style="border:1px solid #d2d6de;">
         {!! Form::model($item, [
-                'action' => ['UsersController@update', $item->id],
+                'action' => ['EmpresasController@update', $item->id],
                 'method' => 'put',
                 'files' => true
             ])
         !!}
 
         <div class="box-body" style="margin:10px;">
-          @include('admin.users.form')
+          @include('admin.empresas.form')
         </div>
 
-        <div class="box-footer" style="background-color:#f5f5f5;border-top:1px solid #d2d6de;">
+      	<div class="box-footer" style="background-color:#f5f5f5;border-top:1px solid #d2d6de;">
       	  <button type="submit" class="btn btn-info" style="width:100px;">Guardar</button>
-          <a class="btn btn-warning " href="{{ route(ADMIN.'.users.index') }}" style="width:100px;"><i class="fa fa-btn fa-back"></i>Cancelar</a>
+          <a class="btn btn-warning " href="{{ route(ADMIN.'.empresas.index') }}" style="width:100px;"><i class="fa fa-btn fa-back"></i>Cancelar</a>
       	</div>
 
-      {!! Form::close() !!}
+        {!! Form::close() !!}
     </div>
   </div>
 </div>

@@ -118,3 +118,4 @@ Rest Controllers are in the `App\Http\Controllers\Api` namespace.
 * Install ApiDoc via npm, run: `npm install apidoc -g` (only first time)
 * Run this command : `apidoc -i app/Http/Controllers/Api/ -o public/api/ -t resources/apiTemplate/`
 
+"# Ing" 

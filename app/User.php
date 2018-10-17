@@ -8,7 +8,13 @@ use Illuminate\Validation\Rule;
 
 
 class User extends Authenticatable
-{
+{   
+
+    public function empresa()
+    {
+        return $this->belongsTo('App\Empresa','id_empresa');
+    }
+
     use Notifiable;
 
     /**
@@ -17,7 +23,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role', 'active', 'avatar'
+        'name','id_empresa', 'email', 'password', 'role', 'active', 'avatar'
     ];
 
     /**
@@ -28,6 +34,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
 
 
     /*

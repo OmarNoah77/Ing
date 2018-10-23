@@ -36,6 +36,15 @@
     </li>
     @endif
 
+    @if (auth()->user()->hasRole('Superadmin|Admin'))
+    <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
+        <a href="{{ route(ADMIN.'.clientes.index') }}">
+            <i class="fa fa-users"></i>
+            <span>Clientes</span>
+        </a>
+    </li>
+    @endif
+
     @if (auth()->user()->hasRole('Superadmin'))
     <li class="treeview">
         <a href="#"><i class='fa fa-link'></i> <span>Tools</span> <i class="fa fa-angle-left pull-right"></i></a>

@@ -1,7 +1,7 @@
 @extends('admin.adminlayout')
 
 @section('page-header')
-    Dashboard <small>Home</small>
+    Inicio <small>Home</small>
 @stop
 
 @section('content')

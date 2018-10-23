@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> CliniSoft | Login</title>
+	<title> ARL | Login</title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 	@if (! config('app.debug', true))
@@ -20,7 +20,7 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="{{ url('/') }}"><b>CliniSoft</b> 1.0</a>
+			<a href="{{ url('/') }}"><b>ARL</b></a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">

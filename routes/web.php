@@ -20,6 +20,8 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth']], f
     Route::resource('categories', 'CategoriesController');
     Route::resource('empresas', 'EmpresasController');
     Route::resource('clientes', 'ClientesController');
+    Route::resource('divipola', 'divipolaController');
+    Route::resource('habitos', 'habitosController');
     Route::resource('users', 'UsersController')->middleware('Role:Superadmin|Admin');
     Route::get('profileedit/{id}', 'ProfileController@edit');
     Route::put('profileupdate/{id}', 'ProfileController@update');

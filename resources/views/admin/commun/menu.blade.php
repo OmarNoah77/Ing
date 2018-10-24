@@ -93,8 +93,8 @@
     <li class="treeview">
         <a href="#"><i class='fa fa-link'></i> <span>Parametricas</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-users"></i>Divipol</a></li>
-            <li><a href="#"><i class="fa fa-users"></i>Habitos</a></li>
+            <li><a href="{{ route(ADMIN.'.divipola.index') }}"><i class="fa fa-users"></i>Divipol</a></li>
+            <li><a href="{{ route(ADMIN.'.habitos.index') }}"><i class="fa fa-users"></i>Habitos</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Ocupaciones</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Tipo Examén</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Expuesto A</a></li>

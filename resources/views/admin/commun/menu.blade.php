@@ -7,7 +7,7 @@
     <li class="<?php echo ( starts_with($route, ADMIN.'.dash') ) ? "active" : '' ?>">
         <a href="{{ route(ADMIN.'.dash') }}">
             <i class="fa fa-dashboard"></i>
-            <span>Dashboard</span>
+            <span>Indicadores</span>
         </a>
     </li>
 
@@ -36,15 +36,94 @@
     </li>
     @endif
 
+
+    @if (auth()->user()->hasRole('Superadmin|Admin'))
+
+    <li class="treeview">
+        <a href="#"><i class='fa fa-link'></i> <span>Información trabajador</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+            <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
+                <a href="{{ route(ADMIN.'.clientes.index') }}">
+                 <i class="fa fa-users"></i>
+                    <span>Trabajador</span>
+                 </a>
+            </li>
+                <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
+                <a href="{{ route(ADMIN.'.clientes.index') }}">
+                <i class="fa fa-users"></i>
+                 <span>Seguridad Social Trabajador</span>
+             </a>
+           </li>
+           <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
+              <a href="{{ route(ADMIN.'.clientes.index') }}">
+              <i class="fa fa-users"></i>
+              <span>Responsable Trabajador</span>
+              </a>
+           </li>
+           <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
+                <a href="{{ route(ADMIN.'.clientes.index') }}">
+               <i class="fa fa-users"></i>
+               <span>Elementos protección</span>
+               </a>
+           </li>
+            <li class="<?php echo ( starts_with($route, ADMIN.'.empresas') ) ? "active" : '' ?>">
+              <a href="{{ route(ADMIN.'.empresas.index') }}">
+              <i class="fa fa-users"></i>
+              <span>Antecedentes Laborales</span>
+            </a>
+    </li>
+        </ul>
+    </li>
+  
+    @endif
+
+
+
     @if (auth()->user()->hasRole('Superadmin|Admin'))
     <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
         <a href="{{ route(ADMIN.'.clientes.index') }}">
             <i class="fa fa-users"></i>
-            <span>Clientes</span>
+            <span>Profesional</span>
         </a>
     </li>
     @endif
 
+   
+    @if (auth()->user()->hasRole('Superadmin'))
+    <li class="treeview">
+        <a href="#"><i class='fa fa-link'></i> <span>Parametricas</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-users"></i>Divipol</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Habitos</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Ocupaciones</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Tipo Examén</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Expuesto A</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Elementos protección</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Especialidad</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Examenes enfasis</a></li>
+             <li><a href="#"><i class="fa fa-users"></i>EPS ARL CAJAS</a></li>       
+        </ul>
+    </li>
+    @endif
+    @if (auth()->user()->hasRole('Superadmin'))
+    <li class="treeview">
+        <a href="#"><i class='fa fa-link'></i> <span>Agenda</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-users"></i>Agenda Semanal</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Horario profesional</a></li>    
+        </ul>
+    </li>
+    @endif
+    @if (auth()->user()->hasRole('Superadmin'))
+    <li class="treeview">
+        <a href="#"><i class='fa fa-link'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-users"></i>Informe cita</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Cargue información</a></li>  
+            <li><a href="#"><i class="fa fa-users"></i>Lsitado trabajadores empresa</a></li>    
+        </ul>
+    </li>
+    @endif
     @if (auth()->user()->hasRole('Superadmin'))
     <li class="treeview">
         <a href="#"><i class='fa fa-link'></i> <span>Tools</span> <i class="fa fa-angle-left pull-right"></i></a>

@@ -30,6 +30,7 @@
 	        <table id="tbl" class="table data-tables table-striped table-hover" cellspacing="0" width="100%">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Direccion</th>
                     <th class="no-sort"></th>
@@ -45,6 +46,7 @@
             <tbody>
       					@foreach ($items as $item)
       						<tr>
+                      <td><a>{{ $item->id }}</a></td>
                       <td><a>{{ $item->nombre }}</a></td>
                       <td><a>{{ $item->direccion }}</a></td>
 

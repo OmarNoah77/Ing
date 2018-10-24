@@ -138,7 +138,7 @@
                 ver 0.0.1
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; {{ date('Y') }} <a href="#">ARL</a>.</strong> Todos los derechos reservados.
+            <strong>Copyright &copy; {{ date('Y') }} <a href="#">ADMINISTRADOR ARL</a>.</strong> Todos los derechos reservados.
         </footer>
 
     </div>

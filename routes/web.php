@@ -21,10 +21,11 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth']], f
     Route::resource('empresas', 'EmpresasController');
     Route::resource('clientes', 'ClientesController');
     Route::resource('divipola', 'divipolaController');
-    Route::resource('profesionales', 'ProfesionalesController');
     Route::resource('habitos', 'habitosController');
     Route::resource('ocupaciones', 'ocupacionesController');
     Route::resource('especialidades', 'especialidadesController');
+    Route::resource('tipoexamenes', 'tipoexamenesController');
+    Route::resource('expuestoas', 'expuestoasController');
     Route::resource('users', 'UsersController')->middleware('Role:Superadmin|Admin');
     Route::get('profileedit/{id}', 'ProfileController@edit');
     Route::put('profileupdate/{id}', 'ProfileController@update');

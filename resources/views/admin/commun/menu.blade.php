@@ -80,8 +80,8 @@
 
 
     @if (auth()->user()->hasRole('Superadmin|Admin'))
-    <li class="<?php echo ( starts_with($route, ADMIN.'.profesionales') ) ? "active" : '' ?>">
-        <a href="{{ route(ADMIN.'.profesionales.index') }}">
+    <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
+        <a href="{{ route(ADMIN.'.clientes.index') }}">
             <i class="fa fa-users"></i>
             <span>Profesional</span>
         </a>
@@ -96,8 +96,8 @@
             <li><a href="{{ route(ADMIN.'.divipola.index') }}"><i class="fa fa-users"></i>Divipol</a></li>
             <li><a href="{{ route(ADMIN.'.habitos.index') }}"><i class="fa fa-users"></i>Habitos</a></li>
             <li><a href="{{ route(ADMIN.'.ocupaciones.index') }}"><i class="fa fa-users"></i>Ocupaciones</a></li>
-            <li><a href="#"><i class="fa fa-users"></i>Tipo Examén</a></li>
-            <li><a href="#"><i class="fa fa-users"></i>Expuesto A</a></li>
+            <li><a href="{{ route(ADMIN.'.tipoexamenes.index') }}"><i class="fa fa-users"></i>Tipo Examén</a></li>
+            <li><a href="{{ route(ADMIN.'.expuestoas.index') }}"><i class="fa fa-users"></i>Expuesto A</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Elementos protección</a></li>
             <li><a href="{{ route(ADMIN.'.especialidades.index') }}"><i class="fa fa-users"></i>Especialidad</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Examenes enfasis</a></li>

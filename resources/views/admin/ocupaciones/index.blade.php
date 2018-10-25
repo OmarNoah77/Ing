@@ -10,7 +10,7 @@
 @stop
 
 @section('page-header')
-    habitos <small>{{ trans('app.manage') }}</small>
+    ocupaciones <small>{{ trans('app.manage') }}</small>
 @stop
 
 @section('content')
@@ -20,7 +20,7 @@
 	    <div class="box" style="border:1px solid #d2d6de;" >
 
 	      <div class="box-header" style="background-color:#888888;border-bottom:1px solid #d2d6de;">
-          <a class="btn btn-info" href="{{ route(ADMIN . '.habitos.create') }}"  title="Add Item">
+          <a class="btn btn-info" href="{{ route(ADMIN . '.ocupaciones.create') }}"  title="Add Item">
             <i class="fa fa-plus" style="vertical-align:middle"></i>
           </a>
 	      </div>
@@ -30,12 +30,11 @@
 	        <table id="tbl" class="table data-tables table-striped table-hover" cellspacing="0" width="60%" bordercolor="#000000"  backcolor="#0000FF">
             <thead>
                 <tr  backcolor="#0000FF">
-                    <th backcolor="#0000FF">id</th>
                     <th backcolor="#0000FF">idempresa</th>
-                    <th>idcodigo</th>
+                    <th>ClaseRiesgo</th>
+                    <th>CodigoCiu_08</th>
                     <th>Descripcion</th>
-                    <th>Usuariosistemas</th>
-                    <th>FechaSistema</th>
+                    <th>FechaSistemas</th>
                 </tr>
             </thead>
             <tfoot>
@@ -48,12 +47,11 @@
             <tbody>
       					@foreach ($items as $item)
       						<tr>
-                      <td><a>{{ $item->id }}</a></td>
-                      <td><a>{{ $item->idempresa }}</a></td>
-                      <td><a>{{ $item->idcodigo }}</a></td>
+                      <td><a>{{ $item->Idempresa }}</a></td>
+                      <td><a>{{ $item->ClaseRiesgo }}</a></td>
+                      <td><a>{{ $item->CodigoCiu_08 }}</a></td>
                       <td><a>{{ $item->Descripcion }}</a></td>
-                      <td><a>{{ $item->Usuariosistemas }}</a></td>
-                      <td><a>{{ $item->FechaSistema }}</a></td>
+                      <td><a>{{ $item->FechaSistemas }}</a></td>
                       <!-- <td>
                         @if ($item->parent)
                         	{{ $item->parent->name }}
@@ -61,11 +59,11 @@
                       </td> -->
                       <td class="actions">
                             <ul class="list-inline" style="margin-bottom:0px;">
-                                <li><a href="{{ route(ADMIN . '.habitos.edit', $item->id) }}" title="{{ trans('app.edit_title') }}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a></li>
+                                <li><a href="{{ route(ADMIN . '.ocupaciones.edit', $item->id) }}" title="{{ trans('app.edit_title') }}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a></li>
                                 <li>
                                     {!! Form::open([
                                         'class'=>'delete',
-                                        'url'  => route(ADMIN . '.habitos.destroy', $item->id),
+                                        'url'  => route(ADMIN . '.ocupaciones.destroy', $item->id),
                                         'method' => 'DELETE',
                                         ])
                                     !!}

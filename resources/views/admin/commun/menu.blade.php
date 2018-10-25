@@ -80,8 +80,8 @@
 
 
     @if (auth()->user()->hasRole('Superadmin|Admin'))
-    <li class="<?php echo ( starts_with($route, ADMIN.'.clientes') ) ? "active" : '' ?>">
-        <a href="{{ route(ADMIN.'.clientes.index') }}">
+    <li class="<?php echo ( starts_with($route, ADMIN.'.profesionales') ) ? "active" : '' ?>">
+        <a href="{{ route(ADMIN.'.profesionales.index') }}">
             <i class="fa fa-users"></i>
             <span>Profesional</span>
         </a>

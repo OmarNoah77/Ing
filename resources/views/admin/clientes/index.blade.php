@@ -10,7 +10,7 @@
 @stop
 
 @section('page-header')
-    Clientes <small>{{ trans('app.manage') }}</small>
+    Trabajador <small>{{ trans('app.manage') }}</small>
 @stop
 
 @section('content')
@@ -100,7 +100,7 @@
                       <td><a>{{ $item->telefono1 }}</a></td>
                       <td><a>{{ $item->telefono2 }}</a></td>
                       <td><a>{{ $item->usuario_sistema }}</a></td>
-                      <td><a>{{ $item->empresasF->nombre }}</a></td>
+                      <td><a>{{ $item->idempresa }}</a></td>
 
                       <td class="actions">
                             <ul class="list-inline" style="margin-bottom:0px;">

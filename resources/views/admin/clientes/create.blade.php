@@ -1,7 +1,7 @@
 @extends('admin.adminlayout')
 
 @section('page-header')
-  Clientes <small>nuevo</small>
+  Trabajador <small>nuevo</small>
 @stop
 
 @section('content')

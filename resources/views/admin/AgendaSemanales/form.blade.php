@@ -5,7 +5,7 @@
 
 {!! Form::mySelect('idespecialidad', 'Especialidad: ', App\especialidades::pluck('descripcion', 'id')->toArray(), null, ['class'=>'chosen', 'placeholder' => 'Escoge una opción']) !!}
 
-{!! Form::mySelect('idpaciente', 'Paciente: ', App\Cliente::pluck('id', 'id')->toArray(), null, ['class'=>'chosen', 'placeholder' => 'Escoge una opción']) !!}
+{!! Form::mySelect('idpaciente', 'Paciente: ', App\Clientes::pluck('id', 'id')->toArray(), null, ['class'=>'chosen', 'placeholder' => 'Escoge una opción']) !!}
 
 {!! Form::mySelect('idexaman', 'Examen: ', App\tipoexamenes::pluck('descripcion', 'id')->toArray(), null, ['class'=>'chosen', 'placeholder' => 'Escoge una opción']) !!}
 

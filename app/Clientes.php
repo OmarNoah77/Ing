@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model
+class Clientes extends Model
 {
     protected $fillable = ['id', 'tipo_identificacion','fecha_expedicion','lugar_expedicion','primer_apellido','segundo_apellido','primer_nombre','segundo_nombre','fecha_nacimiento','sexo','grupo_sanguineo','estado_civil','numero_hijos','lugar_residencia','direccion_residencia','zona','telefono1','telefono2','usuario_sistema','id_empresa'];
 
@@ -15,12 +15,12 @@ class Cliente extends Model
     */
     public function parent()
     {
-        return $this->belongsTo(Cliente::class);
+        return $this->belongsTo(Clientes::class);
     }
 
     public function empresasF()
     {
-        return $this->belongsTo('App\Empresa','id_empresa');
+        return $this->belongsTo('App\Clientes','id_empresa');
     }
 
 

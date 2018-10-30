@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Cliente;
+use App\Clientes;
 
 class ClientesController extends Controller
 {
@@ -16,7 +16,7 @@ class ClientesController extends Controller
      */
         public function index()
     {
-        $items = Cliente::with('parent')->get();
+        $items = Clientes::with('parent')->get();
 
         return view('admin.clientes.index', compact('items'));
     }
@@ -39,7 +39,7 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        Cliente::create($request->all());
+        Clientes::create($request->all());
 
         //return back()->withSuccess(trans('app.success_store'));
         return redirect()->route(ADMIN.'.clientes.index')->withSuccess(trans('app.success_store'));
@@ -64,7 +64,7 @@ class ClientesController extends Controller
      */
     public function edit($id)
     {
-        $item = Cliente::findOrFail($id);
+        $item = Clientes::findOrFail($id);
 
         return view('admin.clientes.edit', compact('item'));
     }
@@ -78,7 +78,7 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = Cliente::findOrFail($id);
+        $item = Clientes::findOrFail($id);
         $item->update($request->all());
         //return back()->withSuccess(trans('app.success_update'));
         return redirect()->route(ADMIN.'.clientes.index')->withSuccess(trans('app.success_update'));
@@ -92,7 +92,7 @@ class ClientesController extends Controller
      */
     public function destroy($id)
     {
-        Cliente::destroy($id);
+        Clientes::destroy($id);
 
         return back()->withSuccess(trans('app.success_destroy'));
     }

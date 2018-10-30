@@ -30,10 +30,8 @@
 	        <table id="tbl" class="table data-tables table-striped table-hover" cellspacing="0" width="60%" bordercolor="#000000"  backcolor="#0000FF">
             <thead>
                 <tr  backcolor="#0000FF">
-                    <th backcolor="#0000FF">idempresa</th>
+                     <th backcolor="#0000FF">id</th>                 
                     <th>Descripcion</th>
-                    <th>usuariosistema</th>
-                    <th>fechasistema</th>
                 </tr>
             </thead>
             <tfoot>
@@ -46,10 +44,8 @@
             <tbody>
       					@foreach ($items as $item)
       						<tr>
-                      <td><a>{{ $item->idempresa }}</a></td>
+                      <td><a>{{ $item->id }}</a></td>
                       <td><a>{{ $item->descripcion }}</a></td>
-                      <td><a>{{ $item->usuariosistema }}</a></td>
-                      <td><a>{{ $item->fechasistema }}</a></td>
                         <!-- <td>
                         @if ($item->parent)
                         	{{ $item->parent->name }}

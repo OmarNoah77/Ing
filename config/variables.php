@@ -1,11 +1,17 @@
 <?php
 
+ 
+
 return [
+
+ 
 
     'boolean' => [
         '0' => 'No',
         '1' => 'Si',
     ],
+
+ 
 
     'tipoid' => [
         'CC' => 'Cedula de Ciudadania (CC)',
@@ -14,11 +20,15 @@ return [
         'CE' => 'Cedula de extrangeria (CE)',
     ],
 
+ 
+
     'sexo' => [
         'Masculino' => 'Masculino',
         'Femenino' => 'Femenino',
         'Otro' => 'Otro',
     ],
+
+ 
 
     'gs' => [
         'A+' => 'A+',
@@ -31,6 +41,8 @@ return [
         'AB-' => 'AB-',
     ],
 
+ 
+
     'ec' => [
         'Soltero' => 'Soltero',
         'Casado' => 'Casado',
@@ -38,10 +50,14 @@ return [
         'Viudo' => 'Viudo',
     ],
 
+ 
+
     'zona' => [
         'Urbana' => 'Urbana',
         'Rural' => 'Rural',
     ],
+
+ 
 
     'role' => [
         '0' => 'Usuario',
@@ -50,20 +66,37 @@ return [
         '5' => 'Superadmin',
     ],
 
+ 
+
+     'riesgo' => [
+        '1' => 'I',
+        '2' => 'II',
+        '3' => 'II',
+        '4' => 'IV',
+        '5' => 'V',
+    ],
+
+ 
+
     'status' => [
         '1' => 'Activo',
         '0' => 'Inactivo',
     ],
 
+ 
+
     'avatar' => [
         'public' => '/files/avatar/',
         'folder' => public_path() . '/files/avatar/',
+
 
         'image' => [
             'width'  => 160,
             'height' => 160,
         ]
     ],
+
+ 
 
     /*
     |------------------------------------------------------------------------------------

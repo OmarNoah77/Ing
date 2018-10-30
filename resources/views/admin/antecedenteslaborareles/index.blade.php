@@ -10,7 +10,7 @@
 @stop
 
 @section('page-header')
-    especialidades <small>{{ trans('app.manage') }}</small>
+    Antecedentes Laborales <small>{{ trans('app.manage') }}</small>
 @stop
 
 @section('content')
@@ -20,18 +20,21 @@
 	    <div class="box" style="border:1px solid #d2d6de;" >
 
 	      <div class="box-header" style="background-color:#888888;border-bottom:1px solid #d2d6de;">
-          <a class="btn btn-info" href="{{ route(ADMIN . '.especialidades.create') }}"  title="Add Item">
+          <a class="btn btn-info" href="{{ route(ADMIN . '.antecedenteslaborareles.create') }}"  title="Agregar">
             <i class="fa fa-plus" style="vertical-align:middle"></i>
           </a>
 	      </div>
 
 	      <!-- /.box-header -->
 	      <div class="box-body table-responsive no-padding"  >
-	        <table id="tbl" class="table data-tables table-striped table-hover" cellspacing="0" width="20%" bordercolor="#000000"  backcolor="#0000FF">
+	        <table id="tbl" class="table data-tables table-striped table-hover" cellspacing="0" width="100%">
             <thead>
-                <tr  backcolor="#0000FF">
-                    <th>Codigo</th>
-                    <th>Descripcion</th>
+                <tr>
+                    <th>Empresa</th>
+                    <th>Ocupacion</th>
+                    <th>Riesgo</th>
+                    <th>Tiempo(Mese)</th>
+                    <th>Observaciones</th>
                 </tr>
             </thead>
             <tfoot>
@@ -44,8 +47,11 @@
             <tbody>
       					@foreach ($items as $item)
       						<tr>
-                      <td><a>{{ $item->id }}</a></td>
-                      <td><a>{{ $item->Descripcion }}</a></td>
+                      <td><a>{{ $item->idempresa }}</a></td>
+                      <td><a>{{ $item->idocupacion }}</a></td>
+                      <td><a>{{ $item->idriesgo }}</a></td>
+                      <td><a>{{ $item->tiempoenmeses }}</a></td>
+                      <td><a>{{ $item->observaciones }}</a></td>
                         <!-- <td>
                         @if ($item->parent)
                         	{{ $item->parent->name }}
@@ -53,11 +59,11 @@
                       </td> -->
                       <td class="actions">
                             <ul class="list-inline" style="margin-bottom:0px;">
-                                <li><a href="{{ route(ADMIN . '.especialidades.edit', $item->id) }}" title="{{ trans('app.edit_title') }}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a></li>
+                                <li><a href="{{ route(ADMIN . '.antecedenteslaborareles.edit', $item->id) }}" title="{{ trans('app.edit_title') }}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a></li>
                                 <li>
                                     {!! Form::open([
                                         'class'=>'delete',
-                                        'url'  => route(ADMIN . '.especialidades.destroy', $item->id),
+                                        'url'  => route(ADMIN . '.antecedenteslaborareles.destroy', $item->id),
                                         'method' => 'DELETE',
                                         ])
                                     !!}

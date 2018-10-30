@@ -28,13 +28,25 @@
     @endif
 
     @if (auth()->user()->hasRole('Superadmin|Admin'))
-    <li class="<?php echo ( starts_with($route, ADMIN.'.empresas') ) ? "active" : '' ?>">
-        <a href="{{ route(ADMIN.'.empresas.index') }}">
+    <li class="<?php echo ( starts_with($route, ADMIN.'.entidades') ) ? "active" : '' ?>">
+        <a href="{{ route(ADMIN.'.entidades.index') }}">
             <i class="fa fa-users"></i>
             <span>Empresas</span>
         </a>
     </li>
     @endif
+
+   @if (auth()->user()->hasRole('Superadmin|Admin'))
+    <li class="<?php echo ( starts_with($route, ADMIN.'.empresas') ) ? "active" : '' ?>">
+        <a href="{{ route(ADMIN.'.empresas.index') }}">
+            <i class="fa fa-users"></i>
+            <span>Entidades</span>
+        </a>
+    </li>
+    @endif
+
+
+
 
 
     @if (auth()->user()->hasRole('Superadmin|Admin'))
@@ -66,8 +78,8 @@
                <span>Elementos protección</span>
                </a>
            </li>
-            <li class="<?php echo ( starts_with($route, ADMIN.'.empresas') ) ? "active" : '' ?>">
-              <a href="{{ route(ADMIN.'.empresas.index') }}">
+            <li class="<?php echo ( starts_with($route, ADMIN.'.antecedenteslaborareles') ) ? "active" : '' ?>">
+              <a href="{{ route(ADMIN.'.antecedenteslaborareles.index') }}">
               <i class="fa fa-users"></i>
               <span>Antecedentes Laborales</span>
             </a>
@@ -100,8 +112,9 @@
             <li><a href="{{ route(ADMIN.'.expuestoas.index') }}"><i class="fa fa-users"></i>Expuesto A</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Elementos protección</a></li>
             <li><a href="{{ route(ADMIN.'.especialidades.index') }}"><i class="fa fa-users"></i>Especialidad</a></li>
-            <li><a href="#"><i class="fa fa-users"></i>Examenes enfasis</a></li>
-             <li><a href="#"><i class="fa fa-users"></i>EPS ARL CAJAS</a></li>       
+            <li><a href="{{ route(ADMIN.'.examenenfasis.index') }}"><i class="fa fa-users"></i>Examenes enfasis</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>EPS ARL CAJAS</a></li>   
+            <li><a href="{{ route(ADMIN.'.tiposervicios.index') }}"><i class="fa fa-users"></i>Tipo de Servicios</a></li>      
         </ul>
     </li>
     @endif
@@ -109,7 +122,7 @@
     <li class="treeview">
         <a href="#"><i class='fa fa-link'></i> <span>Agenda</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-users"></i>Agenda Semanal</a></li>
+            <li><a href="{{ route(ADMIN.'.AgendaSemanales.index') }}"><i class="fa fa-users"></i>Agenda Semanal</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Horario profesional</a></li>    
         </ul>
     </li>

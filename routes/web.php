@@ -31,6 +31,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth']], f
     Route::resource('AgendaSemanales', 'AgendaSemanalController');
     Route::resource('entidades', 'EntidadesController');
     Route::resource('antecedenteslaborareles', 'AntecedentesLabController');
+    Route::resource('profesionales', 'ProfesionalesController');  
     Route::resource('users', 'UsersController')->middleware('Role:Superadmin|Admin');
     Route::get('profileedit/{id}', 'ProfileController@edit');
     Route::put('profileupdate/{id}', 'ProfileController@update');

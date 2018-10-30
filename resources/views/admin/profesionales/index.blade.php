@@ -31,6 +31,7 @@
             <thead>
                 <tr>
                     <th>Id Empresa</th>
+                    <th>Tipo identificacion</th>
                     <th>Numero Identificacion</th>
                     <th>Primer nombre</th>
                     <th>Segundo Nombre</th>
@@ -65,12 +66,13 @@
       					@foreach ($items as $item)
       						<tr>
                       <td><a>{{ $item->idempresa }}</a></td>
+                      <td><a>{{ $item->tipoidentificacion }}</a></td>
                       <td><a>{{ $item->numeroidentificacion }}</a></td>
-                      <td><a>{{ $item->primer_nombre }}</a></td>
-                      <td><a>{{ $item->segundo_nombre }}</a></td>
-                      <td><a>{{ $item->primer_apellido }}</a></td>
-                      <td><a>{{ $item->segundo_apellido }}</a></td>
-                      <td><a>{{ $item->fecha_nacimiento }}</a></td>
+                      <td><a>{{ $item->primerapellido }}</a></td>
+                      <td><a>{{ $item->segundoapellido }}</a></td>
+                      <td><a>{{ $item->primernombre }}</a></td>
+                      <td><a>{{ $item->segundonombre }}</a></td>
+                      <td><a>{{ $item->fechanacimiento }}</a></td>
                       <td><a>{{ $item->sexo }}</a></td>
                       <td><a>{{ $item->idespecialidad }}</a></td>
                       <td><a>{{ $item->usuariosistema }}</a></td>
